@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "0d2d1332-626f-4fc1-a89e-b97e5645de52",
+		"name": "Circuit API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Number of Circuits",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const $ = cheerio.load(pm.response.text());\r",
+							"const currentSeason = $(\"Race\").attr('season');\r",
+							"const numberOfCircuit = $(\"CircuitName\").length;\r",
+							"console.log(numberOfCircuit);\r",
+							"console.log(currentSeason);\r",
+							"\r",
+							"if(currentSeason === '2017'){\r",
+							"    pm.test(\"The number of circuits for this season is 1\", () => \r",
+							"      pm.expect(numberOfCircuit).to.eql(1));\r",
+							"}\r",
+							"else if(currentSeason === '2016'){\r",
+							"        pm.test(\"The number of circuits for this season is 1\", () => \r",
+							"      pm.expect(numberOfCircuit).to.eql(1));\r",
+							"}\r",
+							"else if(currentSeason === '1966'){\r",
+							"        pm.test(\"The number of circuits for this season is 1\", () => \r",
+							"      pm.expect(numberOfCircuit).to.eql(1));\r",
+							"}\r",
+							"else{\r",
+							"        pm.test(\"The number of circuits for this season is 0\", () => \r",
+							"      pm.expect(numberOfCircuit).to.eql(0));\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/f1/{{season_2016}}/{{circuit_2016}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"f1",
+						"{{season_2016}}",
+						"{{circuit_2016}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
