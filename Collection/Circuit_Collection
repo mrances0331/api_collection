@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0d2d1332-626f-4fc1-a89e-b97e5645de52",
+		"_postman_id": "7404ffd2-e233-4ccd-b55e-bee1981bbd2f",
 		"name": "Circuit API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -19,20 +19,20 @@
 							"console.log(currentSeason);\r",
 							"\r",
 							"if(currentSeason === '2017'){\r",
-							"    pm.test(\"The number of circuits for this season is 1\", () => \r",
-							"      pm.expect(numberOfCircuit).to.eql(1));\r",
+							"    pm.test(\"The number of circuits for this season is 20\", () => \r",
+							"      pm.expect(numberOfCircuit).to.eql(20));\r",
 							"}\r",
 							"else if(currentSeason === '2016'){\r",
-							"        pm.test(\"The number of circuits for this season is 1\", () => \r",
-							"      pm.expect(numberOfCircuit).to.eql(1));\r",
+							"        pm.test(\"The number of circuits for this season is 21\", () => \r",
+							"      pm.expect(numberOfCircuit).to.eql(21));\r",
 							"}\r",
 							"else if(currentSeason === '1966'){\r",
-							"        pm.test(\"The number of circuits for this season is 1\", () => \r",
-							"      pm.expect(numberOfCircuit).to.eql(1));\r",
+							"        pm.test(\"The number of circuits for this season is 9\", () => \r",
+							"      pm.expect(numberOfCircuit).to.eql(9));\r",
 							"}\r",
 							"else{\r",
-							"        pm.test(\"The number of circuits for this season is 0\", () => \r",
-							"      pm.expect(numberOfCircuit).to.eql(0));\r",
+							"        pm.test(\"The number of circuits for this season is 7\", () => \r",
+							"      pm.expect(numberOfCircuit).to.eql(7));\r",
 							"}"
 						],
 						"type": "text/javascript"
@@ -43,15 +43,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/api/f1/{{season_2016}}/{{circuit_2016}}",
+					"raw": "{{url}}api/f1/{{season_1950}}",
 					"host": [
-						"{{url}}"
+						"{{url}}api"
 					],
 					"path": [
-						"api",
 						"f1",
-						"{{season_2016}}",
-						"{{circuit_2016}}"
+						"{{season_1950}}"
 					]
 				}
 			},
